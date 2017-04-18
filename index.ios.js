@@ -9,7 +9,7 @@ import Header from './src/components/header';
 const App = () => {
   console.log('Started app');
   return (
-    <Header />
+    <Header  headerText={'Albums'} />
   );
 };
 
