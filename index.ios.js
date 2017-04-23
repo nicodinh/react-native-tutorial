@@ -1,5 +1,3 @@
-'use strict';
-
 import React                  from 'react';
 import { Text }               from 'react-native';
 import { AppRegistry, View }  from 'react-native';
