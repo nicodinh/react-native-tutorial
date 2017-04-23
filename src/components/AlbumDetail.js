@@ -1,20 +1,15 @@
 'use strict';
 
 import React          from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
+
+import Card from './Card';
 
 const AlbumDetail = (props) => {
-  /*const { textStyle, viewStyle } = styles;
-
   return (
-    <View style={viewStyle}>
-      <Text style={textStyle}>{props.headerText}</Text>
-    </View>
-  );*/
-  return (
-    <View>
+    <Card>
       <Text>{props.album.title}</Text>
-    </View>
+    </Card>
   );
 };
 
