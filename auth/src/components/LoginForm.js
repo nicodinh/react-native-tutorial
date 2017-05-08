@@ -11,8 +11,6 @@ class LoginForm extends Component {
       <Card>
         <CardSection>
           <Input
-            autoCorrect={false}
-            autoCapitalize='none'
             placeholder='your@email.com'
             label='Email'
             value={this.state.email}
@@ -23,8 +21,6 @@ class LoginForm extends Component {
         <CardSection>
           <Input
             secureTextEntry
-            autoCorrect={false}
-            autoCapitalize='none'
             placeholder='password'
             label='Password'
             value={this.state.password}
