@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View }             from 'react-native';
 import firebase             from 'firebase';
 
-import firebaseConfig                           from './config/firebase';
+import firebaseConfig                           from './config/firebase.json';
 import { Header, Button, CardSection, Spinner } from './components/common';
 import LoginForm                                from './components/LoginForm';
 
