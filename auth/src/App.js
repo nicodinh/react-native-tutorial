@@ -26,7 +26,7 @@ class App extends Component {
       case true:
         return (
           <CardSection>
-            <Button>
+            <Button onPress={() => firebase.auth().signOut()}>
               Log out
             </Button>
           </CardSection>
@@ -36,7 +36,7 @@ class App extends Component {
       default:
         return (
           <CardSection>
-            <Spinner size='large' />
+            <Spinner />
           </CardSection>
         );
     }
