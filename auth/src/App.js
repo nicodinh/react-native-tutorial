@@ -7,7 +7,7 @@ import { Header }     from './components/common';
 import LoginForm      from './components/LoginForm';
 
 class App extends Component {
-  componenentWillMount() {
+  componentWillMount() {
     firebase.initializeApp(firebaseConfig);
   }
 
