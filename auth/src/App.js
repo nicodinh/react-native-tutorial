@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { View }             from 'react-native';
 import firebase             from 'firebase';
 
-import firebaseConfig                   from './config/firebase';
-import { Header, Button, CardSection }  from './components/common';
-import LoginForm                        from './components/LoginForm';
+import firebaseConfig                           from './config/firebase';
+import { Header, Button, CardSection, Spinner } from './components/common';
+import LoginForm                                from './components/LoginForm';
 
 class App extends Component {
   state = { loggedIn: null };
@@ -22,17 +22,24 @@ class App extends Component {
   }
 
   renderContent() {
-    if (this.state.loggedIn) {
-      return (
-        <CardSection>
-          <Button>
-            Log out
-          </Button>
-        </CardSection>
-      );
+    switch (this.state.loggedIn) {
+      case true:
+        return (
+          <CardSection>
+            <Button>
+              Log out
+            </Button>
+          </CardSection>
+        );
+      case false:
+        return <LoginForm />;
+      default:
+        return (
+          <CardSection>
+            <Spinner size='large' />
+          </CardSection>
+        );
     }
-
-    return <LoginForm />
   }
 
   render() {
