@@ -15,6 +15,7 @@ class LibraryList extends Component {
   }
 
   renderRow(library) {
+    console.log(library); // data from dataSource
     return (
       <ListItem library={library} />
     );
@@ -34,5 +35,6 @@ const mapStateToProps = state => {
   //console.log(state);
   return { libraries: state.libraries };
 };
+
 
 export default connect(mapStateToProps)(LibraryList);
