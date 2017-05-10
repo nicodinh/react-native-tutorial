@@ -8,6 +8,7 @@ import { Header }   from './components/common';
 import LibraryList  from './components/LibraryList';
 
 const App = () => {
+  // <View style={{ flex: 1 }}> On utilise flex: 1 pour utiliser toute l'espace de l'ecran
   return (
     <Provider store={createStore(reducers)}>
       <View style={{ flex: 1 }}>
