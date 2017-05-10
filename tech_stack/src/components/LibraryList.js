@@ -15,7 +15,7 @@ class LibraryList extends Component {
   }
 
   renderRow(library) {
-    console.log(library); // data from dataSource
+    //console.log(library); // data from dataSource
     return (
       <ListItem library={library} />
     );
