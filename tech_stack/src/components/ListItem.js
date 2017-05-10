@@ -15,7 +15,9 @@ class ListItem extends Component {
 
     if (expanded) {
       return (
-        <Text>{library.description}</Text>
+        <CardSection>
+          <Text>{library.description}</Text>
+        </CardSection>
       );
     }
   }
