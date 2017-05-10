@@ -113,7 +113,7 @@
   ,
   {
     "id": 20,
-    "title": "Ton command cousteau",
+    "title": "Ton commandant cousteau",
     "description": "Promise based HTTP client for the browser and node.js. With Axios, you can make XMLHttpRequests from the browser or Node with the full Promise Api."
   } 
   ,
