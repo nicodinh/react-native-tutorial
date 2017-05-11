@@ -107,3 +107,45 @@ const action2 = {
 store.dispatch(action2);
 store.getState();
 ```
+
+## Lesson 109 - Handling form updates with Action Creators
+
+```
+User Types Something  +-------------|
+        |                           |
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+Call Action Creator with new text   |
+        |                           |
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+Action Creator returns an action    |
+        |                           |
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+Action sent to all reducers     Wait for new change...    
+        |                           +
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+Reducer calculates new app state    |
+        |                           |
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+State sent to all components        | 
+        |                           |
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+Components rerender with new state _|
+```
