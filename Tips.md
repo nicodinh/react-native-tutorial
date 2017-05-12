@@ -147,5 +147,12 @@ State sent to all components        |
       \   /                         |
        \ /                          |
         '                           |
-Components rerender with new state _|
+Components rerender with new state  |
+        |                           |
+        |                           |
+      \   /                         |
+       \ /                          |
+        '                           |
+Inputs value set to                 |
+'this.props.email' _________________|
 ```
