@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View }       from 'react-native';
 import { Provider }         from 'react-redux';
-import { createStore }      from 'redux';
+import {
+  createStore,
+  applyMiddleware
+}                           from 'redux';
 import firebase             from 'firebase';
+import ReduxThunk           from 'redux-thunk'; // it's a middleware for a Redux application
 
 import firebaseConfig from './config/firebase.json';
 import reducers       from './reducers';
@@ -14,8 +17,10 @@ class App extends Component {
   }
 
   render() {
+    const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+    
     return (
-      <Provider store={createStore(reducers)}>
+      <Provider store={store}>
         <LoginForm />
       </Provider>
     );
