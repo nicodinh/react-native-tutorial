@@ -7,11 +7,18 @@ import {
   Input,
   Button
 }                       from './common';
-import { emailChanged } from '../actions';
+import {
+  emailChanged,
+  passwordChanged
+} from '../actions';
 
 class LoginForm extends Component {
   onEmailChange(text) {
     this.props.emailChanged(text);
+  }
+
+  onPasswordChange(text) {
+    this.props.passwordChanged(text);
   }
 
   render() {
@@ -31,6 +38,8 @@ class LoginForm extends Component {
             secureTextEntry
             label='Password'
             placeholder='password'
+            onChangeText={this.onPasswordChange.bind(this)}
+            value={this.props.password}            
           />
         </CardSection>
 
@@ -45,9 +54,12 @@ class LoginForm extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state.auth.email);
+  console.log(state.auth.password);
   return {
-    email: state.auth.email
+    email: state.auth.email,
+    password: state.auth.password
   };
 };
 
-export default connect(mapStateToProps, { emailChanged })(LoginForm);
+export default connect(mapStateToProps, { emailChanged, passwordChanged })(LoginForm);
