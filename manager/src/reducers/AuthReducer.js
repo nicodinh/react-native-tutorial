@@ -9,12 +9,11 @@ import { displayStates } from '../lib/displayStates';
 const INITIAL_STATE = {
   email: '',
   password: '',
-  user: null
+  user: null,
+  error: ''
 };
 
 export default (state = INITIAL_STATE, action) => {
-  action.type === LOGIN_USER_SUCCESS ? console.log(action) : null;
-
   switch (action.type) {
     case EMAIL_CHANGED:
       displayStates(state, action, 'email');
@@ -25,8 +24,8 @@ export default (state = INITIAL_STATE, action) => {
     case LOGIN_USER_SUCCESS:
       displayStates(state, action, 'user');
       return { ...state, user: action.payload };
-    // case LOGIN_USER_FAIL:
-    //   return { ...state };      
+    case LOGIN_USER_FAIL:
+      return { ...state, error: 'Authentication Failed.', password: '' };
     default:
       return state;
   }
