@@ -29,7 +29,7 @@ export const loginStates = (state, action) => {
 export const loginSuccessStates = (state, action) => {
   console.log('Action Type:\n\t', action.type);
   console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, 'user': action.payload, error: '', loading: false });
+  console.log('Current States:\n\t', { ...state, 'user': action.payload, error: '', loading: false, email: '', password: '' });
   console.log('');
 };
 
