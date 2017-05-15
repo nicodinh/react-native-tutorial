@@ -26,19 +26,43 @@ export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case EMAIL_CHANGED:
       emailStates(state, action);
-      return { ...state, email: action.payload };
+      return { ...state,
+        email: action.payload
+      };
     case PASSWORD_CHANGED:
       passwordStates(state, action);
-      return { ...state, password: action.payload };
+      return { ...state,
+        password: action.payload
+      };
     case LOGIN_USER:
       loginStates(state, action);
-      return { ...state, loading: true, error: '' };
+      return { ...state,
+        loading: true,
+        error: ''
+      };
+    // case LOGIN_USER_SUCCESS:
+    //   loginSuccessStates(state, action);
+    //   return { ...state,
+    //     user: action.payload,
+    //     error: '',
+    //     loading: false,
+    //     email: '',
+    //     password: ''
+    //   };
+    // equivalent as:
     case LOGIN_USER_SUCCESS:
       loginSuccessStates(state, action);
-      return { ...state, user: action.payload, error: '', loading: false };
+      return { ...state,
+        ...INITIAL_STATE,
+        user: action.payload
+      };    
     case LOGIN_USER_FAIL:
       loginFailStates(state, action);
-      return { ...state, error: 'Authentication Failed.', password: '', loading: false };
+      return { ...state,
+        error: 'Authentication Failed.',
+        password: '',
+        loading: false
+      };
     default:
       return state;
   }
