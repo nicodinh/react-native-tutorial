@@ -4,7 +4,13 @@ import {
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL
 } from '../actions/types';
-import { displayStates } from '../lib/displayStates';
+import {
+  displayStates,
+  emailStates,
+  passwordStates,
+  loginSuccessStates,
+  loginFailStates
+} from '../lib/displayStates';
  
 const INITIAL_STATE = {
   email: '',
@@ -34,32 +40,4 @@ export default (state = INITIAL_STATE, action) => {
     default:
       return state;
   }
-};
-
-const emailStates = (state, action) => {
-  console.log('Action Type:\n\t', action.type);
-  console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, 'email': action.payload });
-  console.log('');
-};
-
-const passwordStates = (state, action) => {
-  console.log('Action Type:\n\t', action.type);
-  console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, 'password': action.payload });
-  console.log('');
-};
-
-const loginSuccessStates = (state, action) => {
-  console.log('Action Type:\n\t', action.type);
-  console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, 'user': action.payload, error: '' });
-  console.log('');
-};
-
-const loginFailStates = (state, action) => {
-  console.log('Action Type:\n\t', action.type);
-  console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, error: 'Authentication Failed.', password: '' });
-  console.log('');
 };
