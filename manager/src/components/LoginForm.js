@@ -7,7 +7,7 @@ import {
   CardSection,
   Input,
   Button
-}                       from './common';
+} from './common';
 import {
   emailChanged,
   passwordChanged,

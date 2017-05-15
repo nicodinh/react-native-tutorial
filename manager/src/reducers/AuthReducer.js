@@ -10,8 +10,8 @@ import {
   passwordStates,
   loginSuccessStates,
   loginFailStates
-} from '../lib/displayStates';
- 
+} from '../lib/logStates';
+
 const INITIAL_STATE = {
   email: '',
   password: '',
