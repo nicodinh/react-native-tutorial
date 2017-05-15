@@ -19,16 +19,23 @@ export const passwordStates = (state, action) => {
   console.log('');
 };
 
+export const loginStates = (state, action) => {
+  console.log('Action Type:\n\t', action.type);
+  console.log('Previous States:\n\t', state);
+  console.log('Current States:\n\t', { ...state, loading: true, error: '' });
+  console.log('');
+};
+
 export const loginSuccessStates = (state, action) => {
   console.log('Action Type:\n\t', action.type);
   console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, 'user': action.payload, error: '' });
+  console.log('Current States:\n\t', { ...state, 'user': action.payload, error: '', loading: false });
   console.log('');
 };
 
 export const loginFailStates = (state, action) => {
   console.log('Action Type:\n\t', action.type);
   console.log('Previous States:\n\t', state);
-  console.log('Current States:\n\t', { ...state, error: 'Authentication Failed.', password: '' });
+  console.log('Current States:\n\t', { ...state, error: 'Authentication Failed.', password: '', loading: false });
   console.log('');
 };
