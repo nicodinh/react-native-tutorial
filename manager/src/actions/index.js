@@ -1,4 +1,5 @@
-import firebase from 'firebase';
+import firebase     from 'firebase';
+import { Actions }  from 'react-native-router-flux';
 
 import {
   EMAIL_CHANGED,
@@ -54,4 +55,6 @@ const loginUserSuccess = (dispatch, user) => {
     type: LOGIN_USER_SUCCESS,
     payload: user
   });
+
+  Actions.employeeList();
 };
