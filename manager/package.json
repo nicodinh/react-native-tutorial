@@ -1,29 +1,29 @@
 {
-	"name": "manager",
-	"version": "0.0.1",
-	"private": true,
-	"author": "Nicolas Azari (nicodinh)",
-	"license": "MIT",
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"firebase": "^3.9.0",
-		"react": "16.0.0-alpha.6",
-		"react-native": "0.44.0",
-		"react-native-router-flux": "^3.39.1",
-		"react-redux": "^5.0.4",
-		"redux": "^3.6.0",
-		"redux-thunk": "^2.2.0"
-	},
-	"devDependencies": {
-		"babel-jest": "20.0.1",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "20.0.1",
-		"react-test-renderer": "16.0.0-alpha.6"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+ "name": "manager",
+ "version": "0.0.1",
+ "private": true,
+ "author": "Nicolas Azari (nicodinh)",
+ "license": "MIT",
+ "scripts": {
+  "start": "node node_modules/react-native/local-cli/cli.js start",
+  "test": "jest"
+ },
+ "dependencies": {
+  "firebase": "^3.9.0",
+  "react": "16.0.0-alpha.6",
+  "react-native": "0.44.0",
+  "react-native-router-flux": "^3.39.1",
+  "react-redux": "^5.0.4",
+  "redux": "^3.6.0",
+  "redux-thunk": "^2.2.0"
+ },
+ "devDependencies": {
+  "babel-jest": "20.0.1",
+  "babel-preset-react-native": "1.9.1",
+  "jest": "20.0.1",
+  "react-test-renderer": "16.0.0-alpha.6"
+ },
+ "jest": {
+  "preset": "react-native"
+ }
 }
