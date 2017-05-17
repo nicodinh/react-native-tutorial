@@ -1,9 +1,10 @@
 import React    from 'react';
 import { View } from 'react-native';
 
+// style={[styles.containerStyle, props.style]} === array of styles: style on the right override style on the left
 const CardSection = (props) => {
   return (
-    <View style={styles.containerStyle}>
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   );
