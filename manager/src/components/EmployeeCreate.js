@@ -20,7 +20,7 @@ class EmployeeCreate extends Component {
             label='Name'
             placeholder='jane'
             value={this.props.name}
-            onChangeText={value => this.props.employeeUpdate({ props: 'name', value})}
+            onChangeText={value => this.props.employeeUpdate({ prop: 'name', value})}
           />
         </CardSection>
 
@@ -29,7 +29,7 @@ class EmployeeCreate extends Component {
             label='Phone'
             placeholder='555-555-5555'
             value={this.props.phone}
-            onChangeText={value => this.props.employeeUpdate({ props: 'phone', value})}
+            onChangeText={value => this.props.employeeUpdate({ prop: 'phone', value})}
           />
         </CardSection>
 
@@ -50,4 +50,4 @@ const mapStateToProps = ({ employeeForm }) => {
   return { name, phone, shift } = employeeForm;
 };
 
-export default connect(null, { employeeUpdate })(EmployeeCreate);
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeCreate);
