@@ -14,6 +14,7 @@ const RouterComponent = () => {
 
       <Scene key='main'>
         <Scene
+          panHandlers={null}
           onRight={() => Actions.employeeCreate()}
           rightTitle='Add' 
           key='employeeList'
@@ -21,7 +22,12 @@ const RouterComponent = () => {
           title='Employees'
           initial
         />
-        <Scene key='employeeCreate' component={EmployeeCreate} title='Create Employee' />
+        <Scene
+          panHandlers={null}
+          key='employeeCreate'
+          component={EmployeeCreate}
+          title='Create Employee'
+        />
       </Scene>
     </Router>
   );
