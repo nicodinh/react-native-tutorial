@@ -156,3 +156,19 @@ Components rerender with new state  |
 Inputs value set to                 |
 'this.props.email' _________________|
 ```
+
+
+## Lesson XXX - Firebase rules
+
+```json
+{
+  "rules": {
+		"users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    }
+  }
+}
+```
