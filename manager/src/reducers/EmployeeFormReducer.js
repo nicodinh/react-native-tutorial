@@ -1,5 +1,6 @@
 import {
-  EMPLOYEE_UPDATE
+  EMPLOYEE_UPDATE,
+  EMPLOYEE_CREATE
 } from '../actions/types';
 import { logStates } from '../lib/logStates';
 
@@ -15,6 +16,8 @@ export default (state = INITIAL_STATE, action) => {
       // action.payload === { props: 'name', value: 'jane' }
       logStates(state, action.type, { [action.payload.prop]: action.payload.value });
       return { ...state, [action.payload.prop]: action.payload.value };
+    case EMPLOYEE_CREATE:
+      return INITIAL_STATE; // we don't need {... State}, we juste want reset the states  
     default:
       return state;
   }
