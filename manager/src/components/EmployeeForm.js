@@ -69,4 +69,4 @@ const mapStateToProps = (state) => {
   return { name, phone, shift };
 };
 
-export default connect(mapStateToProps, employeeUpdate)(EmployeeForm);
+export default connect(mapStateToProps, { employeeUpdate })(EmployeeForm);
