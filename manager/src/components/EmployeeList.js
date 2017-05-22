@@ -23,4 +23,4 @@ class EmployeeList extends Component {
   }
 }
 
-export default (null, { employeesFetch })(EmployeeList);
+export default connect(null, { employeesFetch })(EmployeeList);
