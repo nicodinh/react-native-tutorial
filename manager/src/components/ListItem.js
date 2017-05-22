@@ -38,4 +38,5 @@ const styles ={
     paddingLeft: 15
   }
 };
+
 export default ListItem;
