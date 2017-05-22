@@ -29,6 +29,7 @@ export const employeeCreate = ({ name, phone, shift }) => {
   };
 };
 
+// a chaque nouvel value dans Firebase on recupere automatiquement les data.
 export const employeesFetch = () => {
   const { currentUser } = firebase.auth();
 
