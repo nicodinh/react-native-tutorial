@@ -12,7 +12,8 @@ import {
 } from './common';
 import {
   employeeUpdate,
-  employeeSave
+  employeeSave,
+  employeeDelete
 } from '../actions';
 
 class EmployeeEdit extends Component {
@@ -38,7 +39,9 @@ class EmployeeEdit extends Component {
   }
 
   onAccept() {
-    
+    const { uid } = this.props.employee;
+
+    this.props.employeeDelete({ uid });
   }
 
   onDecline() {
@@ -88,5 +91,6 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   employeeUpdate,
-  employeeSave
+  employeeSave,
+  employeeDelete
 })(EmployeeEdit);
