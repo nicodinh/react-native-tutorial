@@ -14,4 +14,4 @@ Done !
 ## B. React Native: Advanced Concepts
 https://www.udemy.com/react-native-advanced
 
-next lesson number 6
+next lesson number 10
