@@ -5,8 +5,8 @@ import {
   Text,
   View
 } from 'react-native';
+import { Card, Button } from 'react-native-elements';
 
-//import Ball from './src/Ball';
 import Deck from './src/Deck';
 
 const DATA = [
@@ -23,14 +23,30 @@ const DATA = [
 class App extends React.Component {
   renderCard(item) {
     return (
-      <Text>{item.Text}</Text>
+      <Card
+        key={item.id}
+        image={{ uri: item.uri }}
+      >
+
+        <Text style={{ marginBottom: 10, fontWeight: 'bold', fontSize: 16, color: '#777777' }}>
+            {item.text}
+        </Text>
+
+        <Text style={{ marginBottom: 10 }}>
+          Bla bla bla
+        </Text>
+        <Button
+          icon={{ name: 'code' }}
+          backgroundColor='#03A9F4'
+          title='View Now!'
+        />
+      </Card>
     );
   }
 
   render() {
     return (
       <View style={styles.container}>
-        {/*<Ball />*/}
         <Deck
           data={DATA}
           renderCard={this.renderCard}
