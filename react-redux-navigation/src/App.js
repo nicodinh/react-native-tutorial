@@ -11,11 +11,13 @@ import reducers               from './reducers';
 import Home                   from './components/Home';
 import Registration           from './components/Registration';
 import Login                  from './components/Login';
+import Dashboard              from './components/Dashboard';
 
 const AppNavigator = StackNavigator({
   Home: { screen: Home },
   Registration: { screen: Registration },
   Login: { screen: Login },
+  Dashboard: { screen: Dashboard },
 });
 
 class App extends Component {

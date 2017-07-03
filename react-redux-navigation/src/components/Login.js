@@ -1,6 +1,6 @@
 import React, { Component }                 from 'react';
 import { StyleSheet, Text, View }           from 'react-native';
-import { StackNavigator }                   from 'react-navigation';
+// import { StackNavigator }                   from 'react-navigation';
 import { Constants, KeepAwake }             from 'expo';
 import { Button, Grid, Row, Divider, Tile } from 'react-native-elements';
 
@@ -28,7 +28,12 @@ class Login extends Component {
         </Row>
         <Row size={1}>
           <View style={styles.bottomContainerStyle}>
-            <Text>Login</Text>
+            <Button
+              raised
+              title='Login'
+              buttonStyle={styles.loginButtonStyle}
+              onPress={() => this.props.navigation.navigate('Dashboard')}
+            />
           </View>
         </Row>
       </Grid>
@@ -47,6 +52,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#3abdee',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  loginButtonStyle: {
+    borderColor: 'white',
+    borderWidth: 0.5,
+    backgroundColor: '#3abdee'
   }
 });
 
