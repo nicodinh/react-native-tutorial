@@ -22,3 +22,6 @@ https://www.udemy.com/react-native-advanced
 next lesson number 18
 
 - [swipe](swipe/)
+
+## C. Playing with react-navigation and redux
+- [react-redux-navigation](react-redux-navigation/)
