@@ -1,6 +1,5 @@
-//import firebase     from 'firebase';
-// TODO replace with react-navigation
-//import { Actions }  from 'react-native-router-flux';
+import firebase     from 'firebase';
+import { NavigationActions } from 'react-navigation';
 
 import {
   EMAIL_CHANGED,
@@ -9,7 +8,7 @@ import {
   LOGIN_USER_FAIL,
   LOGIN_USER
 } from './types';
-import { logError } from '../lib/logError';
+//import { logError } from '../lib/logError';
 
 // Action Creator `emailChanged`
 export const emailChanged = (text) => {
@@ -32,15 +31,16 @@ export const loginUser = ({ email, password }) => {
   return (dispatch) => {
     dispatch({ type: LOGIN_USER });
 
-    // firebase.auth().signInWithEmailAndPassword(email, password)
-    //   .then(user => loginUserSuccess(dispatch, user))
-    //   .catch((error) => {
-    //     logError(error);
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(user => loginUserSuccess(dispatch, user))
+      .catch((error) => {
+        logError(error);
+        loginUserFail(dispatch);
         
-    //     firebase.auth().createUserWithEmailAndPassword(email, password)
-    //       .then(user => loginUserSuccess(dispatch, user))
-    //       .catch(() => loginUserFail(dispatch));
-    //   });
+        // firebase.auth().createUserWithEmailAndPassword(email, password)
+        //   .then(user => loginUserSuccess(dispatch, user))
+        //   .catch(() => loginUserFail(dispatch));
+      });
   };
 };
 
@@ -58,5 +58,5 @@ const loginUserSuccess = (dispatch, user) => {
   });
 
   // TODO Replace with react-navigation
-  //Actions.main();
+  NavigationActions.navigate('Dashboard');
 };

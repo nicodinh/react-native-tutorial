@@ -35,6 +35,7 @@ const SimpleTabs = TabNavigator(
   {
     tabBarOptions: {
       activeTintColor: Platform.OS === 'ios' ? '#e91e63' : '#fff',
+      backgroundColor: '#3abdee'
     },
   }
 );
@@ -54,9 +55,7 @@ class Dashboard extends Component {
   };
   
   handleBackPress = () => {
-    //this.props.navigation.goBack();
     ToastAndroid.show('Back button is pressed', ToastAndroid.SHORT);
-    //this.props.navigation.navigate('Dashboard');
     return true;
   };
 
@@ -69,20 +68,6 @@ class Dashboard extends Component {
 
   render() {
     return (
-      // <Grid>
-      //   <KeepAwake />
-      //   <Row size={3}>
-      //     <SimpleTabs />
-      //     <View style={styles.topContainerStyle}>
-            
-      //     </View>
-      //   </Row>
-      //   <Row size={1}>
-      //     <View style={styles.bottomContainerStyle}>
-      //       <Text>Dashboard</Text>
-      //     </View>
-      //   </Row> 
-      // </Grid>
       <View style={{ flex: 1 }}>
         <SimpleTabs />
       </View>

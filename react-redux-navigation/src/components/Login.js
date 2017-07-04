@@ -1,8 +1,9 @@
 import React, { Component }                 from 'react';
 import { StyleSheet, Text, View }           from 'react-native';
-// import { StackNavigator }                   from 'react-navigation';
 import { Constants, KeepAwake }             from 'expo';
 import { Button, Grid, Row, Divider, Tile } from 'react-native-elements';
+
+import LoginForm from './LoginForm';
 
 class Login extends Component {
   static navigationOptions = {
@@ -24,6 +25,9 @@ class Login extends Component {
         <Row size={3}>
           <View style={styles.topContainerStyle}>
             <Text>Login</Text>
+            <View style={{ flex: 1 }}>
+              <LoginForm />
+            </View>
           </View>
         </Row>
         <Row size={1}>
