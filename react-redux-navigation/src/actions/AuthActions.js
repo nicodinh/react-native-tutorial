@@ -6,9 +6,9 @@ import {
   PASSWORD_CHANGED,
   LOGIN_USER_SUCCESS,
   LOGIN_USER_FAIL,
-  LOGIN_USER
+  LOGIN_USER,
+  REGISTER_USER
 } from './types';
-//import { logError } from '../lib/logError';
 
 // Action Creator `emailChanged`
 export const emailChanged = (text) => {
@@ -26,24 +26,6 @@ export const passwordChanged = (text) => {
   };
 };
 
-// Action Creator `loginUser` using ReduxThunk
-export const loginUser = ({ email, password }) => {
-  return (dispatch) => {
-    dispatch({ type: LOGIN_USER });
-
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(user => loginUserSuccess(dispatch, user))
-      .catch((error) => {
-        logError(error);
-        loginUserFail(dispatch);
-        
-        // firebase.auth().createUserWithEmailAndPassword(email, password)
-        //   .then(user => loginUserSuccess(dispatch, user))
-        //   .catch(() => loginUserFail(dispatch));
-      });
-  };
-};
-
 const loginUserFail = (dispatch) => {
   dispatch({
     type: LOGIN_USER_FAIL  
@@ -51,12 +33,41 @@ const loginUserFail = (dispatch) => {
 };
 
 // dispatch will call when firebase request is complete 
-const loginUserSuccess = (dispatch, user) => {
+const loginUserSuccess = (dispatch, user, navigation) => {
   dispatch({
     type: LOGIN_USER_SUCCESS,
     payload: user
   });
 
-  // TODO Replace with react-navigation
-  NavigationActions.navigate('Dashboard');
+  const nav = NavigationActions.navigate({ routeName: 'Dashboard' });
+  navigation.dispatch(nav);
 };
+
+// Action Creator `loginUser` using ReduxThunk
+export const loginUser = ({ email, password, navigation }) => {
+  return (dispatch) => {
+    dispatch({ type: LOGIN_USER });
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(user => loginUserSuccess(dispatch, user, navigation))
+      .catch((error) => {
+        //logError(error);
+        console.log(error);
+        loginUserFail(dispatch);
+      });
+  };
+};
+
+// Action Creator `registerUser`
+export const registerUser = ({ email, password, navigation }) => {
+  return (dispatch) => {
+    dispatch({ type: REGISTER_USER });
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(user => loginUserSuccess(dispatch, user))
+      .catch(() => loginUserFail(dispatch));
+  };
+};
+
+
+

@@ -1,4 +1,4 @@
-import React, { Component }                 from 'react';
+import React, { Component }     from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,10 +6,16 @@ import {
   BackHandler,
   ToastAndroid,
   Platform
-} from 'react-native';
-import { TabNavigator }                     from 'react-navigation';
-import { Constants, KeepAwake }             from 'expo';
-import { Button, Grid, Row, Divider, Tile } from 'react-native-elements';
+}                               from 'react-native';
+import { TabNavigator }         from 'react-navigation';
+import { Constants, KeepAwake } from 'expo';
+import {
+  Button,
+  Grid,
+  Row,
+  Divider,
+  Tile
+}                               from 'react-native-elements';
 
 import Home                   from './Home';
 // https://github.com/react-community/react-navigation/blob/master/examples/NavigationPlayground/js/SimpleTabs.js
@@ -67,6 +73,8 @@ class Dashboard extends Component {
   }
 
   render() {
+    console.log('Dashboard', this.props);
+
     return (
       <View style={{ flex: 1 }}>
         <SimpleTabs />

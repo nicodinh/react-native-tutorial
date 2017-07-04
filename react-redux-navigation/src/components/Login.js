@@ -19,16 +19,18 @@ class Login extends Component {
   };
   
   render() {
+    console.log('Login', this.props);
+
     return (
       <Grid>
         <KeepAwake />
         <Row size={3}>
-          <View style={styles.topContainerStyle}>
-            <Text>Login</Text>
-            <View style={{ flex: 1 }}>
-              <LoginForm />
+          {/*<View style={styles.topContainerStyle}>*/}
+            <View style={{ flex: 1, backgroundColor: '#fff' }}>
+              <LoginForm navigation={this.props.navigation} />
+              {/*<LoginForm />*/}
             </View>
-          </View>
+          {/*</View>*/}
         </Row>
         <Row size={1}>
           <View style={styles.bottomContainerStyle}>

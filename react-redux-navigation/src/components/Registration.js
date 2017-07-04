@@ -1,6 +1,5 @@
 import React, { Component }                 from 'react';
 import { StyleSheet, Text, View }           from 'react-native';
-// import { StackNavigator }                   from 'react-navigation';
 import { Constants, KeepAwake }             from 'expo';
 import { Button, Grid, Row, Divider, Tile } from 'react-native-elements';
 
@@ -18,6 +17,8 @@ class Registration extends Component {
   };
   
   render() {
+    console.log('Registration', this.props);
+
     return (
       <Grid>
         <KeepAwake />

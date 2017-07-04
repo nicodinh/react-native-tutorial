@@ -25,9 +25,9 @@ class LoginForm extends Component {
   }
 
   onButtonPress() {
-    const { email, password } = this.props;
-
-    this.props.loginUser({ email, password });
+    const { email, password, navigation } = this.props;
+    console.log(this.props);
+    this.props.loginUser({ email, password, navigation });
   }
 
   renderButton() {
@@ -43,6 +43,8 @@ class LoginForm extends Component {
   }
 
   render() {
+    console.log('LoginForm', this.props);
+
     return (
       <Card>
         <CardSection>

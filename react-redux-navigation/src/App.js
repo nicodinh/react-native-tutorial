@@ -21,6 +21,8 @@ const AppNavigator = StackNavigator({
   Registration: { screen: Registration },
   Login: { screen: Login },
   Dashboard: { screen: Dashboard },
+}, {
+    initialRouteName: 'Home',
 });
 
 class App extends Component {
