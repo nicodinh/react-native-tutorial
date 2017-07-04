@@ -4,3 +4,9 @@
 
 ## React Navigation examples
 - https://github.com/react-community/react-navigation/tree/master/examples/ReduxExample
+
+TODO  
+
+AuthActions.js  
+AuthRecuder.js  
+LoginForm.js
