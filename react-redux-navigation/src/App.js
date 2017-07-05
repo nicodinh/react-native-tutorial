@@ -8,22 +8,23 @@ import ReduxThunk           from 'redux-thunk';
 import { StackNavigator }   from 'react-navigation';
 import firebase             from 'firebase';
 
-import reducers             from './reducers';
-import firebaseConfig       from './config/firebase.json';
-import Home                 from './components/Home';
-import Registration         from './components/Registration';
-import Login                from './components/Login';
-import Dashboard            from './components/Dashboard';
+import reducers               from './reducers';
+import firebaseConfig         from './config/firebase.json';
+import AppWithNavigationState from './navigators/AppNavigator';
+// import Home                 from './components/Home';
+// import Registration         from './components/Registration';
+// import Login                from './components/Login';
+// import Dashboard            from './components/Dashboard';
 
 
-const AppNavigator = StackNavigator({
-  Home: { screen: Home },
-  Registration: { screen: Registration },
-  Login: { screen: Login },
-  Dashboard: { screen: Dashboard },
-}, {
-    initialRouteName: 'Home',
-});
+// const AppNavigator = StackNavigator({
+//   Home: { screen: Home },
+//   Registration: { screen: Registration },
+//   Login: { screen: Login },
+//   Dashboard: { screen: Dashboard },
+// }, {
+//     initialRouteName: 'Home',
+// });
 
 class App extends Component {
   componentWillMount() {
@@ -35,7 +36,8 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <AppNavigator />
+        {/*<AppNavigator />*/}
+        <AppWithNavigationState />
       </Provider>
     );
   }
