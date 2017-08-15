@@ -172,3 +172,17 @@ Inputs value set to                 |
   }
 }
 ```
+
+## Enabling LayoutAnimation on Android
+- https://github.com/facebook/react-native/issues/5267
+```javascript
+import { UIManager, Platform } from 'react-native';
+
+constructor() {
+    super();
+
+    if (Platform.OS === 'android') {
+      UIManager.setLayoutAnimationEnabledExperimental && UIManager.setLayoutAnimationEnabledExperimental(true);
+    }
+  }
+```
