@@ -16,12 +16,17 @@ Done !
 - [manager](manager/)
 - [tech_stack](tech_stack/)
 
+```bash
+yarn install
+react-native run-ios
+```
+
 ## B. React Native: Advanced Concepts
 https://www.udemy.com/react-native-advanced
 
 next lesson number 18
 
-- [swipe](swipe/)
+- [swipe](swipe/) (yarn install and open expo project)
 
 ## C. Playing with react-navigation and redux
 - [react-redux-navigation](react-redux-navigation/)
